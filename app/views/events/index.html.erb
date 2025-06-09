@@ -1,16 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Events" %>
-
+<div class="header">
 <h1>Events</h1>
-
-<div id="events">
-  <% @events.each do |event| %>
-    <%= render event %>
-    <p>
-      <%= link_to "Show this event", event %>
-    </p>
-  <% end %>
 </div>
 
-<%= link_to "New event", new_event_path %>
+<div class="body">
+  <div class="grid grid-cols-2 sm:grid-cols-3" id="events">
+  <% @events.each do |event| %>
+    <%= render event %>
+    <button class="bg-sky-500 hover:bg-sky-700">
+      <%= link_to "Show this event", event %>
+    </button>
+  <% end %>
+  <%= link_to "New event", new_event_path %>
+</div>
+</div>
+
+
+
